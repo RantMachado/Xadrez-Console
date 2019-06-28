@@ -17,7 +17,7 @@ namespace Xadrez_Console
                     }
                     else
                     {
-                        Console.Write(tab.MostrarPecaIndividual(i, j) + " \n");
+                        Console.Write(tab.MostrarPecaIndividual(i, j) + " ");
                     }
                 }
                 Console.WriteLine();
