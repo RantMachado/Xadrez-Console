@@ -18,5 +18,11 @@
             Colunas = colunas;
             pecas = new Peca[linhas, colunas];
         }
+
+        //Metodos da Classe
+        public Peca MostrarPecaIndividual(int linha, int coluna)
+        {
+            return pecas[linha, coluna];
+        }
     }
 }
