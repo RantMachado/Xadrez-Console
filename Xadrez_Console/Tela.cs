@@ -1,5 +1,6 @@
 ﻿using System;
 using Xadrez_Console.tabuleiro;
+using Xadrez_Console.Xadrez;
 using Xadrez_Console.tabuleiro.Enums;
 
 namespace Xadrez_Console
@@ -35,6 +36,15 @@ namespace Xadrez_Console
             Console.Write("  a b c d e f g h") ;
             Console.ForegroundColor = aux;
         }
+
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1]+"");
+            return new PosicaoXadrez(coluna, linha);
+        }
+
 
         public static void ImprimirCorPeca(Peca peca)
         {

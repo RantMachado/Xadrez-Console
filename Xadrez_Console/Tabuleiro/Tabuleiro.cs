@@ -48,6 +48,21 @@ namespace Xadrez_Console.tabuleiro
             p.Posicao = pos;
         }
 
+        public Peca RetirarPeca(Posicao pos)
+        {
+            if (MostrarPecaIndividual(pos) == null)
+            {
+                return null;
+            }
+            else
+            {
+                Peca aux = MostrarPecaIndividual(pos);
+                aux.Posicao = null;
+                pecas[pos.Linha, pos.Coluna] = null;
+                return aux;
+            }
+        }
+
         public bool PosicaoValida(Posicao pos)
         {
             if (pos.Linha < 0 || pos.Linha >= Linhas || pos.Coluna < 0 || pos.Coluna >= Colunas)
