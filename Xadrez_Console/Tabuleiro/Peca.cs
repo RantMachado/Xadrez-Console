@@ -2,7 +2,7 @@
 
 namespace Xadrez_Console.tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         //Auto-Properties
         public Posicao Posicao{ get; set; }
@@ -27,5 +27,7 @@ namespace Xadrez_Console.tabuleiro
         {
             QtdMovimentos++;
         }
+
+        public abstract bool[,] MovimentoPossiveis();
     }
 }

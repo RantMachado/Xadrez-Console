@@ -7,7 +7,7 @@ namespace Xadrez_Console.tabuleiro
         //Auto-Properties
         public int Linhas { get; set; }
         public int Colunas { get; set; }
-        private Peca[,] pecas;
+        public Peca[,] Pecas { get; private set; }
 
         //Construtores
         public Tabuleiro()
@@ -18,18 +18,18 @@ namespace Xadrez_Console.tabuleiro
         {
             Linhas = linhas;
             Colunas = colunas;
-            pecas = new Peca[linhas, colunas];
+            Pecas = new Peca[linhas, colunas];
         }
 
         //Metodos da Classe
         public Peca MostrarPecaIndividual(int linha, int coluna)
         {
-            return pecas[linha, coluna];
+            return Pecas[linha, coluna];
         }
 
         public Peca MostrarPecaIndividual(Posicao pos)
         {
-            return pecas[pos.Linha, pos.Coluna];
+            return Pecas[pos.Linha, pos.Coluna];
         }
 
         public bool ExistePeca(Posicao pos)
@@ -44,7 +44,7 @@ namespace Xadrez_Console.tabuleiro
             {
                 throw new TabuleiroException("Já existe uma peça nessa posição");
             }
-            pecas[pos.Linha, pos.Coluna] = p;
+            Pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;
         }
 
@@ -58,7 +58,7 @@ namespace Xadrez_Console.tabuleiro
             {
                 Peca aux = MostrarPecaIndividual(pos);
                 aux.Posicao = null;
-                pecas[pos.Linha, pos.Coluna] = null;
+                Pecas[pos.Linha, pos.Coluna] = null;
                 return aux;
             }
         }
